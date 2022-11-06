@@ -41,7 +41,7 @@ vmap <leader>d <C-d>
 vmap <leader>u <C-u>
 
 " actions
-nmap <leader>h <action>(PreviousTab)
+nmap <S-Tab> <action>(PreviousTab)
 nmap <Tab> <action>(NextTab)
 nmap <leader>bd <action>(CloseEditor)
 nmap <leader>i <action>(Generate)
@@ -56,11 +56,16 @@ nmap <leader>g <Action>(Vcs.ShowTabbedFileHistory)
 nmap <leader>o <Action>(FileStructurePopup)
 nmap <leader>q <Action>(MethodDown)
 nmap <leader>w <Action>(MethodUp)
+map <leader><leader>m <Action>(MaximizeEditorInSplit)
+nmap <leader><leader>h <Action>(PrevSplitter)
+nmap <leader><leader>l <Action>(NextSplitter)
 
 " Map \r to the Reformat Code action
 nmap \r <Action>(ReformatCode)
 nmap \h <Action>(SplitHorizontally)
 nmap \v <Action>(SplitVertically)
+nmap \l <Action>(MoveTabRight)
+nmap \j <Action>(MoveTabDown)
 nmap \b <Action>(ActivateBookmarksToolWindow)
 
 nmap Q gq

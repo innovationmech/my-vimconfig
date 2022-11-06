@@ -1,5 +1,6 @@
 {
-  "vim.easymotion": true, "vim.incsearch": true,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.leader": "space",
@@ -60,8 +61,7 @@
     },
     {
       "before": [
-        "<leader>",
-        "l"
+        "<Tab>"
       ],
       "commands": [
         "workbench.action.nextEditor"
@@ -136,6 +136,24 @@
       "commands": [
         "workbench.action.navigateForward"
       ]
+    },
+    {
+      "before": [
+        "m",
+        "c"
+      ],
+      "commands": [
+        "editor.action.insertCursorBelow"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "a"
+      ],
+      "commands": [
+        "editor.action.insertCursorAbove"
+      ]
     }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
@@ -174,5 +192,6 @@
       ]
     }
   ],
-  "vim.smartRelativeLine": true
+  "vim.smartRelativeLine": true,
+  "vim.statusBarColorControl": true
 }
