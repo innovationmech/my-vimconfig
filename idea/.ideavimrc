@@ -41,8 +41,8 @@ vmap <leader>d <C-d>
 vmap <leader>u <C-u>
 
 " actions
-nmap <S-Tab> <action>(PreviousTab)
-nmap <Tab> <action>(NextTab)
+" nmap <S-Tab> <action>(PreviousTab)
+" nmap <Tab> <action>(NextTab)
 nmap <leader>bd <action>(CloseEditor)
 nmap <leader>i <action>(Generate)
 nmap <leader>m <action>(Git.Menu)
