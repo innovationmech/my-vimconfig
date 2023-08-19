@@ -5,12 +5,14 @@ set surround
 set incsearch
 set hlsearch
 set ignorecase
+set matchit
 
 Plug 'easymotion/vim-easymotion'
-set easymotion
 let mapleader = " "
 
-noremap <Esc> <nop>
+set quickscope
+
+" noremap <Esc> <nop>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
@@ -19,6 +21,7 @@ nnoremap <C-k> :m -2<CR>
 inoremap <C-j> <Esc>:m +1<CR>gi
 inoremap <C-k> <Esc>:m -2<CR>gi
 inoremap jk <Esc>
+" inoremap kj <Esc>
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -41,8 +44,8 @@ vmap <leader>d <C-d>
 vmap <leader>u <C-u>
 
 " actions
-" nmap <S-Tab> <action>(PreviousTab)
-" nmap <Tab> <action>(NextTab)
+" nmap <leader><leader>h <action>(PreviousTab)
+" nmap <leader><leader>l <action>(NextTab)
 nmap <leader>bd <action>(CloseEditor)
 nmap <leader>i <action>(Generate)
 nmap <leader>m <action>(Git.Menu)
@@ -56,9 +59,14 @@ nmap <leader>g <Action>(Vcs.ShowTabbedFileHistory)
 nmap <leader>o <Action>(FileStructurePopup)
 nmap <leader>q <Action>(MethodDown)
 nmap <leader>w <Action>(MethodUp)
-map <leader><leader>m <Action>(MaximizeEditorInSplit)
+map <leader><leader>M <Action>(MaximizeEditorInSplit)
 nmap <leader><leader>h <Action>(PrevSplitter)
 nmap <leader><leader>l <Action>(NextSplitter)
+nmap <leader><leader>u <Action>(ShowUmlDiagram)
+nmap <leader><leader>f <Action>(SliceForward)
+nmap <leader><leader>b <Action>(SliceBackward)
+map <leader><leader>m <Action>(ExtractMethod)
+
 
 " Map \r to the Reformat Code action
 nmap \r <Action>(ReformatCode)
@@ -80,12 +88,25 @@ let g:NERDTreeMapJumpParent='h'
 "  mc next match
 "  mx skip next match
 "  mp remove current match and go back to previous one
-Plug "terryma/vim-multiple-cursors"
-map mc <A-n>
-map mx <A-x>
-map mp <A-p>
+" Plug "terryma/vim-multiple-cursors"
+" map mc <A-n>
+" map mx <A-x>
+" map mp <A-p>
+
+set multicursor
+map Q <Plug>(multicursor-ms/)
+map z <Plug>(multicursor-mcv)
+map Z <Plug>(multicursor-mcr)
 
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=8
 
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'tommcdo/vim-exchange'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'dbakker/vim-paragraph-motion'
+Plug 'machakann/vim-highlightedyank'
+Plug 'kana/vim-textobj-entire'
+Plug 'vim-scripts/argtextobj.vim'
